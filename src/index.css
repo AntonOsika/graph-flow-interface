@@ -74,3 +74,27 @@
     @apply bg-background text-foreground;
   }
 }
+
+.react-flow__node {
+  @apply bg-background text-foreground border border-border rounded-md shadow-sm;
+}
+
+.react-flow__handle {
+  @apply bg-primary border-2 border-background;
+}
+
+.react-flow__edge-path {
+  @apply stroke-primary stroke-2;
+}
+
+.react-flow__minimap {
+  @apply bg-background border border-border rounded-md;
+}
+
+.react-flow__controls {
+  @apply bg-background border border-border rounded-md;
+}
+
+.react-flow__controls-button {
+  @apply border-border text-foreground hover:bg-muted;
+}
