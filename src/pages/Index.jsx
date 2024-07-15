@@ -10,6 +10,7 @@ import ReactFlow, {
 import 'reactflow/dist/style.css';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { PlusCircle } from 'lucide-react';
 
 const nodeTypes = [
   { type: 'default', label: 'Default Node' },
@@ -43,7 +44,12 @@ const Index = () => {
     <div className="flex h-screen">
       <aside className="w-64 p-4 bg-secondary flex flex-col">
         <h1 className="text-2xl font-bold mb-4">Graph Program Interface</h1>
-        <Button onClick={addNode} className="mb-4">Add Node</Button>
+        <Button 
+          onClick={addNode} 
+          className="mb-6 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 bg-primary text-primary-foreground hover:bg-primary/90"
+        >
+          <PlusCircle className="mr-2 h-5 w-5" /> Add Node
+        </Button>
         <h2 className="text-lg font-semibold mb-4">Node Types</h2>
         {nodeTypes.map((type) => (
           <Card key={type.type} className="p-2 mb-2 cursor-move" draggable onDragStart={(event) => event.dataTransfer.setData('application/reactflow', type.type)}>
