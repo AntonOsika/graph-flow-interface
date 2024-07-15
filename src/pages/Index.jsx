@@ -66,6 +66,9 @@ const Index = () => {
             onEdgesChange={onEdgesChange}
             onConnect={onConnect}
             fitView
+            defaultViewport={{ x: 0, y: 0, zoom: 0.5 }} // Set default zoom to 0.5 (zoomed out)
+            minZoom={0.1} // Allow zooming out further
+            maxZoom={4} // Limit maximum zoom
           >
             <Controls />
             <MiniMap />
