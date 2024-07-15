@@ -40,21 +40,19 @@ const Index = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen">
-      <header className="flex justify-between items-center p-4 bg-primary text-primary-foreground">
-        <h1 className="text-2xl font-bold">Graph Program Interface</h1>
-        <Button onClick={addNode}>Add Node</Button>
-      </header>
-      <div className="flex flex-1 overflow-hidden">
-        <aside className="w-64 p-4 bg-secondary">
-          <h2 className="text-lg font-semibold mb-4">Node Types</h2>
-          {nodeTypes.map((type) => (
-            <Card key={type.type} className="p-2 mb-2 cursor-move" draggable onDragStart={(event) => event.dataTransfer.setData('application/reactflow', type.type)}>
-              {type.label}
-            </Card>
-          ))}
-        </aside>
-        <main className="flex-1">
+    <div className="flex h-screen">
+      <aside className="w-64 p-4 bg-secondary flex flex-col">
+        <h1 className="text-2xl font-bold mb-4">Graph Program Interface</h1>
+        <Button onClick={addNode} className="mb-4">Add Node</Button>
+        <h2 className="text-lg font-semibold mb-4">Node Types</h2>
+        {nodeTypes.map((type) => (
+          <Card key={type.type} className="p-2 mb-2 cursor-move" draggable onDragStart={(event) => event.dataTransfer.setData('application/reactflow', type.type)}>
+            {type.label}
+          </Card>
+        ))}
+      </aside>
+      <main className="flex-1 flex flex-col">
+        <div className="flex-1">
           <ReactFlow
             nodes={nodes}
             edges={edges}
@@ -67,11 +65,11 @@ const Index = () => {
             <MiniMap />
             <Background variant="dots" gap={12} size={1} />
           </ReactFlow>
-        </main>
-      </div>
-      <footer className="p-4 bg-muted text-center">
-        <p>© 2024 Graph Program Interface. All rights reserved.</p>
-      </footer>
+        </div>
+        <footer className="p-4 bg-muted text-center">
+          <p>© 2024 Graph Program Interface. All rights reserved.</p>
+        </footer>
+      </main>
     </div>
   );
 };
