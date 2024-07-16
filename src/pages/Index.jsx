@@ -43,7 +43,7 @@ const Index = () => {
   return (
     <div className="flex h-screen">
       <aside className="w-64 p-4 bg-secondary flex flex-col">
-        <h1 className="text-2xl font-bold mb-4">Graph Program Interface</h1>
+        <h1 className="text-2xl font-bold mb-4">Graphy Visualiser</h1>
         <Button 
           onClick={addNode} 
           className="mb-6 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 bg-primary text-primary-foreground hover:bg-primary/90"
